@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1033635609090",
+    "project_id": "flutter-firebase-film-example",
+    "storage_bucket": "flutter-firebase-film-example.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033635609090:android:fb65c4a6967f5664bf451b",
+        "android_client_info": {
+          "package_name": "com.example.film_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033635609090-h9gumlmfkrnj8t3f7reve4loqdpge11f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDknXzR9uoGp7S8kZv7FS4FFnAqCs6vSzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033635609090-h9gumlmfkrnj8t3f7reve4loqdpge11f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
