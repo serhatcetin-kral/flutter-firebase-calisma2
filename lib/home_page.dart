@@ -37,16 +37,18 @@ class _HomePageState extends State<HomePage> {
       print(list.first.data());
       print(list[1].data());
 
-
     }
-    )]
+    ),
+         //stream builder canli degistirmeyi saglar data basde birsey degisince programida degistirir
+          StreamBuilder<DocumentSnapshot>(stream:karasovalyeRef.snapshots(),builder:(BuildContext context,AsyncSnapshot asyncSnaphot)
+          {return Text("${asyncSnaphot.data.data()}");})
+          ]
         ),
       ),
     ),
     );
   }
 }
-
 
 
 ///////////////////////////////koleksiyon verisi
