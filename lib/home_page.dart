@@ -31,22 +31,48 @@ class _HomePageState extends State<HomePage> {
 
           child: Column(children:[
 
-    ElevatedButton(child:Text("GET QUERYSNAPSHOT"),onPressed:() async{
-      var response=await moviesRef.get();
-      var list=response.docs;
-      print(list.first.data());
-      print(list[1].data());
+            // ElevatedButton(child:Text("GET QUERYSNAPSHOT"),onPressed:() async{
+            //   var response=await moviesRef.get();
+            //   var list=response.docs;
+            //   print(list.first.data());
+            //   print(list[1].data());
+            //
+            // }
+            // ),
+            //stream builder canli degistirmeyi saglar data basde birsey degisince programida degistirir
+            StreamBuilder<QuerySnapshot>(
+                stream:moviesRef.snapshots(),builder:(BuildContext context,AsyncSnapshot asyncSnaphot)
+            {
+
+              List<DocumentSnapshot> listOfDocumentSnapshot=asyncSnaphot.data.docs;
+              return  Flexible(
+                child: ListView.builder(
+                    itemCount: listOfDocumentSnapshot.length,
+                   itemBuilder: (context,index){
+
+                      return Card(
+                        child: ListTile(
+                          title:Text("${listOfDocumentSnapshot[index].get('name')}",style: TextStyle(fontSize: 24),),
+                          subtitle:  Text("${listOfDocumentSnapshot[index].get('year')}",style: TextStyle(fontSize: 16),),
+
+                        ),
+                      );
 
 
-    }
-    )]
+                   },
+                ),
+              );
+
+
+
+            })
+          ]
+          ),
         ),
       ),
-    ),
     );
   }
 }
-
 
 
 ///////////////////////////////koleksiyon verisi
